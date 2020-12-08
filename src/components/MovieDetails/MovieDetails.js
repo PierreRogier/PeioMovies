@@ -2,6 +2,17 @@ import React, { Component } from "react";
 
 export default class MovieDetails extends Component {
     render() {
-        return <div className="w-25 border p-4">movies details</div>;
+        return (
+            <div className="w-25 bg-light p-4 d-flex flex-column">
+                <h5>{this.props.movie.title}</h5>
+                <hr className="w-100" />
+                <div>
+                    <img className="d-block mx-auto w-100" src={this.props.movie.img} alt={this.props.movie.title} />
+                </div>
+                <small className="text-center">{this.props.movie.details}</small>
+                <hr className="w-100" />
+                <p>{this.props.movie.description}</p>
+            </div>
+        );
     }
 }
