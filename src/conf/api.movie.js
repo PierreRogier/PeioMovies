@@ -11,3 +11,10 @@ apiMovie.interceptors.request.use((req) => {
 });
 
 export default apiMovie;
+
+export const apiMovieMap = (movie) => ({
+    img: `https://image.tmdb.org/t/p/w500${movie.poster_path}`,
+    title: movie.title,
+    details: `${movie.release_date.substr(0, 4)} | ${movie.vote_average}/10 (${movie.vote_count} votes)`,
+    description: movie.overview,
+});
